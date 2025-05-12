@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Reuniones API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET todas las reuniones",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/reuniones",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "reuniones"]
+        }
+      }
+    },
+    {
+      "name": "POST nueva reunión",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Reunión de equipo\",\n  \"descripcion\": \"Planificación mensual\",\n  \"fecha\": \"2025-05-10 10:00:00\",\n  \"participantes\": [\n    { \"nombre\": \"Ana López\", \"email\": \"ana@example.com\" },\n    { \"nombre\": \"Carlos Ruiz\", \"email\": \"carlos@example.com\" }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/reuniones",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "reuniones"]
+        }
+      }
+    },
+    {
+      "name": "PUT actualizar reunión",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Reunión actualizada\",\n  \"descripcion\": \"Con nuevo horario\",\n  \"fecha\": \"2025-05-11 09:30:00\",\n  \"participantes\": [\n    { \"nombre\": \"Lucía Vega\", \"email\": \"lucia@example.com\" }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/reuniones/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "reuniones", "1"]
+        }
+      }
+    },
+    {
+      "name": "DELETE reunión",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/reuniones/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "reuniones", "1"]
+        }
+      }
+    }
+  ]
+}
